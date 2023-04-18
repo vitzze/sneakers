@@ -1,0 +1,105 @@
+@charset "utf-8:";
+
+// bgの枠でなく、videoタグのidに下記を指定する
+
+#bg-video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#pickup {
+  width: 100%;
+  padding: 100px 0 50px 0;
+}
+
+.sec-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+// slickについて、liの中のimgに｛display：block｝として、
+// ｛max-width：　100％｝
+// paddingをかけると１枚ずつの左右余白設定できる。
+
+.slick-area {
+  margin-top: 30px;
+  visibility: hidden;
+
+  li img {
+    display: block;
+    max-width: 100%;
+    padding: 0 30px;
+  }
+
+  &.slick-initialized {
+    visibility: visible;
+  }
+}
+
+//header（高さ85px）を固定しているので、featureのアンカーリンクに正しく飛ぶために{margin：-85ｐｘ｝｛padding：85px｝で、見た目は変わらないが、リンクが正しく飛ぶために調整している。
+  
+#feature {
+  max-width: 1240px;
+  margin-top: -85px;
+  padding: 85px 16px 50px 16px;
+  margin: 0 auto;
+
+  .item-wrapper {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 3fr));
+    column-gap: 20px;
+    row-gap: 30px;
+
+
+    // アイテム枠（.item）にも高さを指示しない。SP版にしたとき崩れる。
+    .item {
+      border: 1px solid #ccc;
+      box-shadow: 0 0 8px 4px #ccc;
+      width: 100%;
+
+
+      // 画像（この場合は.fadeInクラス）にはheightを指定しない！崩れる。
+      .fadeIn {
+        vertical-align: top;
+        opacity: 0;
+        width: 100%;
+        aspect-ratio: 6/4;
+        object-fit: cover;
+        transform: translateY(30px);
+        transition: all 1s;
+ 
+        &.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      // 高さを指定するのはテキストエリア！
+
+      .text-area {
+        height: 200px;
+        padding: 25px;
+        text-align: left;
+
+        .category {
+          font-size: 12px;
+        }
+
+        .info {
+          margin-top: 25px;
+          font-weight: bold;
+          line-height: 1.5rem;
+          margin-bottom: 35px;
+        }
+
+        .date {
+          text-align: right;
+        }
+      }
+
+    }
+  }
+}
+

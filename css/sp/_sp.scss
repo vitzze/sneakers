@@ -1,0 +1,55 @@
+@charset "utf-8:";
+
+@media screen and (max-width: 960px) {
+
+  #ham-navigation {
+    width: 100%;
+  }
+
+  #ham-navigation .navigation {
+
+    li {
+      width: 50%;
+      border-bottom: 1px solid #fff;
+  
+      &:first-child {
+        border-top: 1px solid #fff;
+      }
+  
+      a {
+        display: block;
+        padding: 25px 0;
+      }
+    }  
+  }
+  
+
+  .footer {
+    width: 100%;
+
+  .contact-wrapper {
+    width: 90%;
+    flex-direction: column;
+
+    .form-area,
+    .text-area {
+      width: 100%;
+    }
+
+    .form-area {
+      margin-top: 50px;
+
+      .submit {
+        margin-top: 30px;
+        width: 100%;
+      }
+    }
+
+
+
+
+  }
+ 
+}
+
+}
